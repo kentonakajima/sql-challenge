@@ -1,0 +1,45 @@
+# -- Create departments table
+departments
+-
+dept_no varchar pk
+dept_name varchar
+
+
+# -- Create dept_emp talbe
+dept_emp
+-
+emp_no int PK FK >- employees.emp_no
+dept_no varchar PK FK >- departments.dept_no
+
+
+# -- Create dept_manager table
+dept_manager
+-
+dept_no varchar PK FK >- departments.dept_no
+emp_no int PK FK >- employees.emp_no
+
+
+# -- Create employees table
+employees
+-
+emp_no int pk
+emp_title_id varchar FK >- titles.title_id
+birth_date date
+first_name varchar
+last_name varchar
+sex varchar
+hire_date date
+
+
+# -- Create salaries table
+salaries
+-
+emp_no int PK FK >- employees.emp_no
+salary int
+
+
+# -- Create titles table
+titles
+-
+title_id varchar pk
+title varchar
